@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+
+
+    <!<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Register</title>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/css/bootstrap-responsive.css" rel="stylesheet"/>*@
+        <script src="~/bootstrap.js"></script>
+        <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </head>
+     
+    <body>
+    <div class="row">
+        
+        <div class="col-md-5"></div>
+            <div class="col-md-7">
+    <div class="container">
+    <form  action="/Home/signUpDb" method="post" >
+    <fieldset>
+    <legend>Registration Form</legend>
+    <div class="control-group">
+    <label class="control-label">Username:</label>
+    <div class="controls">
+    <input type="text" id="un" name="un"/>
+    </div>
+     
+         
+         <input type="button" id="b1" onclick="f1()" value="Check"/>
+    </div>
+    <div class="control-group">
+    <label class="control-label">Password:</label>
+    <div class="controls">
+    <input type="text" id="password" name="password">
+    </div>
+    </div>
+
+    <div class="control-group">
+    <label class="control-label">Secret Code:</label>
+    <div class="controls">
+    <input type="text" id="SecretCode" name="SecretCode">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label">Cnic</label>
+    <div class="controls">
+    <input type="text" id="Cnic" name="Cnic">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label"></label>
+    <div class="controls">
+    <button type="submit" class="btn btn-success" >Submit</button>
+    </div>
+    </div>
+    </fieldset>
+    </form>
+    </div>
+
+       </div></div>
+    </body>
+    </html>
+
+@Scripts.Render("~/bundles/jquery")
+ <script>
+     function f1() {
+         $.getJSON("/Voter/Check?u=" + $('#un').val(), function (x) {
+
+             if (x) {
+                 alert("You Are Allowed to Sign Up");
+             }
+             else {
+                 alert(" You Are Not Allowed to Sign Up, Please Contact to ECP office of Your Area");
+             }
+         });
+     };
+         </script>

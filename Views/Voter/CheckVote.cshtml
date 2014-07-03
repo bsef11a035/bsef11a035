@@ -1,0 +1,92 @@
+﻿@{
+    Layout = null;
+}
+
+<h2>CheckVote</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#mod').empty();
+
+            $.getJSON("/Voter/GetCandidate", function (data) {
+                alert("check Vote");
+                $.each(data, function (i, item) {
+                    $('#mod').append('<option value=' + item.Name + '>' + item.Name + '</optoin>');
+                });
+            });
+
+            $('#Search1').click(function () {
+
+
+                $('#Searched').empty();
+                alert("clicked");
+                $.getJSON("/Voter/CastedVote?u=" + $('#model').val(), function (data) {
+                    alert("cast");
+                    $('#Searched').append("You have Successfully casted Vote  " );
+
+
+                });
+
+            });
+
+
+
+        });
+
+        //    $('#Search1').click(function () {
+
+              
+        //        $('#Searched').empty();
+        //        $.getJSON("/Voter/GetCandidate" , function (data) {
+                   
+        //            $('#Searched').append("You have  casted Vote : "+data.Name);
+
+
+
+        //        });
+
+        //    });
+
+
+
+        //});
+
+    </script>
+</head>
+<body>
+    
+
+
+            <label for="select" class="col-lg-2 control-label text-primary">Search</label>
+    <div class="col-lg-10">
+        <select class="form-control" id="mod">
+            <option>Select Candidate...</option>
+
+        </select>
+
+        <input type="button" id="Search1" name="Search" value="Search" />
+    </div>
+
+    <div id="Searched">
+
+    </div>
+</body>

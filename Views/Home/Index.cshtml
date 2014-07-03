@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+
+
+</head>
+<body>
+    
+    <div class="row">
+        
+        <div class="col-md-3">
+           <div >
+           
+                <h4>Result of Election 2013 <span class="label label-success">Success</span></h4>
+               </br>
+               
+               <h4>Result of Election 2008 <span class="label label-success">Success</span></h4>
+               </br>
+               <h4>Result of Election 2002 <span class="label label-success">Success</span></h4>
+               </br>
+               <h4>Result of Election 1997 <span class="label label-success">Success</span></h4>
+               </br>
+               <h4>Result of Election 1993 <span class="label label-success">Success</span></h4>
+               </br>
+               <h4>Result of Election 1990 <span class="label label-success">Success</span></h4>
+               </br>
+           
+        </div>
+        </div>
+        <div class="col-md-6">
+            
+
+<div id="carousel-example-generic">
+    <div class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/images/office.jpg" alt="Slide 1" />
+                <div class="carousel-caption">
+                    <h1>Slide 1</h1>
+                    <p>Slide 1 Description</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/images/office.jpg" alt="Slide 2" />
+                <div class="carousel-caption">
+                    <h1>Slide 2</h1>
+                    <p>Slide to Description</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/images/office.jpg" alt="Slide 3" />
+                <div class="carousel-caption">
+                    <h1>Slide 3</h1>
+                    <p>Slide 3 Description</p>
+                </div>
+            </div>
+</div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        
+    </div>
+</div>
+
+        </div>
+
+        <div class="col-md-3">
+              <img class="active" src="~/images/quaid.jpg" />
+              
+        </div>
+
+
+    </div>
+   
+    
+</body>
+</html>
+<script>
+$(function(){
+  $('#carousel-example-generic').carousel();
+});
+</script>

@@ -1,0 +1,93 @@
+﻿@model WebECP.Models.Candidate
+
+@{
+
+    Layout = null;
+}
+
+<h2>AddCandidate</h2>
+<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="row">
+
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <legend>Candidate</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Cnic)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Cnic)
+                    @Html.ValidationMessageFor(model => model.Cnic)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Description)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Party)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Party)
+                    @Html.ValidationMessageFor(model => model.Party)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.symbol)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.symbol)
+                    @Html.ValidationMessageFor(model => model.symbol)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Qualification)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Qualification)
+                    @Html.ValidationMessageFor(model => model.Qualification)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Account)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Account)
+                    @Html.ValidationMessageFor(model => model.Account)
+                </div>
+
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+                </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+    @*<script>
+
+        $(document).ready(function (){
+
+            $('#model').empty();
+            alert("Check.....");
+             $.getJSON("/Home/GetCandidate", function (data) {
+                 $.each(data, function (i, item) {
+                     $('#model').append('<option value=' + item.Name + '>' + item.Name + '</optoin>');
+                 });
+             });
+         });
+         </script>*@
+</head>
+<body>
+
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"> Web Based Polling System</a>
+
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="../Home/parties">Political Parties</a></li>
+                    <li><a href="../Home/CandidateDetails">Candidates</a></li>
+                    <li><a href="../Home/VoterDetails">Voters</a></li>
+                    <li><a href="../Home/NAResult">Results</a></li>
+                    <li><a href="../Admin/AddVoter">AddVoter</a></li>
+                    <li><a href="../Admin/UpdateVoter">Update Voter</a></li>
+                    <li><a href="../Admin/AddCandidate">Add Candidate</a></li>
+                    <li><a href="../Admin/DeleteVoter">Delete Voter</a></li>
+                    <li><a href="../Admin/DeleteCandidate">Delete Candidate</a></li>
+                    <li><a href="/Home/LOgOut">Log Out</a></li>
+
+
+
+                </ul>
+
+                @*<form class="navbar-form navbar-left pull-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="search" />
+
+                        </div>
+                        <button type="submit" class="btn-success">Submit</button>
+
+                    </form>*@
+
+                @*<input type="button" id="b1"  value="Candidates"/>
+                    </div>
+                                <label for="select" class="col-lg-2 control-label text-primary">Search</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="model">
+                                        <option>Select Candidate...</option>
+
+                                    </select>
+                                </div>*@
+            </div>
+    </nav>
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only">45% Complete</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <img src="~/images/ecp.png" class="alert" />
+
+
+        </div>
+        <div class="col-md-4">
+            <img class="active" src="~/images/yes.png" />
+
+        </div>
+
+    </div>
+</body>

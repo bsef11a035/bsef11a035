@@ -1,0 +1,102 @@
+﻿@model WebECP.Models.Voter
+
+@{
+    Layout = null;
+}
+
+<h2>UpdateVoter</h2>
+<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="row">
+
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <legend>Voter</legend>
+
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Cnic)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Cnic)
+                    @Html.ValidationMessageFor(model => model.Cnic)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.password)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.password)
+                    @Html.ValidationMessageFor(model => model.password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.NationalAssembly)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NationalAssembly)
+                    @Html.ValidationMessageFor(model => model.NationalAssembly)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ProvincialAssembly)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ProvincialAssembly)
+                    @Html.ValidationMessageFor(model => model.ProvincialAssembly)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SecretCode)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.SecretCode)
+                    @Html.ValidationMessageFor(model => model.SecretCode)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.NationalVote)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NationalVote)
+                    @Html.ValidationMessageFor(model => model.NationalVote)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ProvincialVote)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ProvincialVote)
+                    @Html.ValidationMessageFor(model => model.ProvincialVote)
+                </div>
+
+                <p>
+                    <input type="submit" value="Save" />
+                </p>
+                </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
